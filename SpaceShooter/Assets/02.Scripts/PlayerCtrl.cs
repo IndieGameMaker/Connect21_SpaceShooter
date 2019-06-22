@@ -86,7 +86,7 @@ public class PlayerCtrl : MonoBehaviour
     //관통하는 성질을 갖는다.
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.CompareTag("PUNCH"))
+        if (currHp > 0.0f && coll.CompareTag("PUNCH"))
         {
             //주인공의 생명 감산
             currHp -= 10.0f;        
