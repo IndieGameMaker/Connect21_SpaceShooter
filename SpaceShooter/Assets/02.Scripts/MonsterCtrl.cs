@@ -142,4 +142,19 @@ public class MonsterCtrl : MonoBehaviour
         //몬스터의 Die 애니메이션 실행
         anim.SetTrigger(hashDie);
     }
+
+    void OnTriggerEnter(Collider coll)
+    {
+        Debug.Log(coll);
+    }
+
+    void OnTriggerStay(Collider coll)
+    {
+        Debug.Log("Stay "+ coll);
+    }
+
+    void OnTriggerExit(Collider coll)
+    {
+        Debug.Log("Exit " + coll);
+    }
 }
