@@ -34,6 +34,7 @@ public class MonsterCtrl : MonoBehaviour
     private float hp = 100.0f;
 
     //혈흔효과 프리팹을 저장할 변수
+    [System.NonSerialized] //C# 고유 속성
     public GameObject bloodEffect;
 
     void Start()
