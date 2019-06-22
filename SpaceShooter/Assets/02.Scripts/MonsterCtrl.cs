@@ -37,6 +37,18 @@ public class MonsterCtrl : MonoBehaviour
     [System.NonSerialized] //C# 고유 속성
     public GameObject bloodEffect;
 
+    void OnEnable()
+    {
+        //이벤트 연결
+        PlayerCtrl.OnPlayerDie += OnYouWin;
+    }
+
+    void OnDisable()
+    {
+        //이벤트 연결 해지
+        PlayerCtrl.OnPlayerDie -= OnYouWin;
+    }
+
     void Start()
     {
         playerTr    = GameObject.FindGameObjectWithTag("PLAYER").GetComponent<Transform>();        

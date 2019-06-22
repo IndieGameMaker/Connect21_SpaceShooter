@@ -24,6 +24,9 @@ public class PlayerCtrl : MonoBehaviour
     private float initHp = 100.0f;  //초기 생명수치
     private float currHp = 100.0f;  //현재 생명수치
 
+    public delegate void PlayerDieHandler();
+    public static event PlayerDieHandler OnPlayerDie;
+
     void Start()
     {
         tr = GetComponent<Transform>(); 
@@ -99,12 +102,14 @@ public class PlayerCtrl : MonoBehaviour
 
     void PlayerDie()
     {
-        //스테이지에 있는 모든 몬스터를 추출해서 배열에 저장
-        GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
+        OnPlayerDie(); //이벤트 호출(Raise)
 
-        foreach (GameObject monster in monsters)
-        {
-            monster.SendMessage("OnYouWin", SendMessageOptions.DontRequireReceiver);
-        }
+        //스테이지에 있는 모든 몬스터를 추출해서 배열에 저장
+        // GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
+
+        // foreach (GameObject monster in monsters)
+        // {
+        //     monster.SendMessage("OnYouWin", SendMessageOptions.DontRequireReceiver);
+        // }
     }
 }
