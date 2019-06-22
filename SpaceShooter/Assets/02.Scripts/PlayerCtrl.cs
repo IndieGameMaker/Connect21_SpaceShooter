@@ -88,7 +88,8 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (coll.CompareTag("PUNCH"))
         {
-            currHp -= 10.0f;
+            //주인공의 생명 감산
+            currHp -= 10.0f;        
             if (currHp <= 0.0f)
             {
                 PlayerDie();
@@ -98,6 +99,9 @@ public class PlayerCtrl : MonoBehaviour
 
     void PlayerDie()
     {
-        Debug.Log("Player Die");
+        //스테이지에 있는 모든 몬스터를 추출해서 배열에 저장
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
+
+        
     }
 }
