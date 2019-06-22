@@ -29,9 +29,11 @@ public class FireCtrl : MonoBehaviour
         {
             Fire();
             //레이를 투사하는 함수 (발사원점, 발사방향, out 결괏값, 거리)
-            if (Physics.Raycast(firePos.position, firePos.forward, out hit, 10.0f))
+            //1<<8 = 2^8 = 256
+            //1<<8 | 1<<9 , ~(1<<8)
+            if (Physics.Raycast(firePos.position, firePos.forward, out hit, 10.0f, 1<<8))
             {
-                Debug.Log("Hit " + hit.transform.name);
+                
             }
         }
     }
