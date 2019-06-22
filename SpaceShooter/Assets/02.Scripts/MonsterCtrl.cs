@@ -29,6 +29,9 @@ public class MonsterCtrl : MonoBehaviour
     private int hashIsAttack = Animator.StringToHash("IsAttack");
     private int hashHit      = Animator.StringToHash("Hit");
 
+    //몬스터의 생명 게이지 수치
+    private float hp = 100.0f;
+
     void Start()
     {
         playerTr    = GameObject.FindGameObjectWithTag("PLAYER").GetComponent<Transform>();        
