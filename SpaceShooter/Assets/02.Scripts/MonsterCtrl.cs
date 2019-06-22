@@ -33,12 +33,19 @@ public class MonsterCtrl : MonoBehaviour
     //몬스터의 생명 게이지 수치
     private float hp = 100.0f;
 
+    //혈흔효과 프리팹을 저장할 변수
+    public GameObject bloodEffect;
+
     void Start()
     {
         playerTr    = GameObject.FindGameObjectWithTag("PLAYER").GetComponent<Transform>();        
         monsterTr   = GetComponent<Transform>();
         nv          = GetComponent<NavMeshAgent>();
         anim        = GetComponent<Animator>();
+
+        //혈흔효과 로딩
+        //bloodEffect = Resources.Load("BloodEffect") as GameObject;
+        bloodEffect = Resources.Load<GameObject>("BloodEffect");
 
         StartCoroutine(CheckMonsterState());
         StartCoroutine(MonsterAction());
