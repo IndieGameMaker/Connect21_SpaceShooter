@@ -160,6 +160,7 @@ public class MonsterCtrl : MonoBehaviour
 
     public void OnYouWin()
     {
+        Debug.Log("I Win !!!");
         anim.SetTrigger("PlayerDie");
         StopAllCoroutines();
         nv.isStopped = true;
