@@ -11,6 +11,8 @@ public class FireCtrl : MonoBehaviour
     public MeshRenderer muzzleFlash;
 
     private AudioSource _audio;
+    //Ray에 닿은 객체의 여러가지 충돌 정보를 저장할 변수
+    private RaycastHit hit;
 
     void Start()
     {
@@ -26,13 +28,18 @@ public class FireCtrl : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Fire();
+            //레이를 투사하는 함수 (발사원점, 발사방향, out 결괏값, 거리)
+            if (Physics.Raycast(firePos.position, firePos.forward, out hit, 10.0f))
+            {
+                Debug.Log("Hit " + hit.transform.name);
+            }
         }
     }
 
     void Fire()
     {
         //총알을 생성
-        Instantiate(bullet, firePos.position, firePos.rotation);
+        //Instantiate(bullet, firePos.position, firePos.rotation);
         //총 소리 발생
         _audio.PlayOneShot(fireSfx, 0.8f); //오디오 파일, 볼륨
         //코루틴 호출 함수
