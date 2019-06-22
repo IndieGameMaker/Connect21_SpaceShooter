@@ -157,4 +157,11 @@ public class MonsterCtrl : MonoBehaviour
     {
         Debug.Log("Exit " + coll);
     }
+
+    public void OnYouWin()
+    {
+        anim.SetTrigger("PlayerDie");
+        StopAllCoroutines();
+        nv.isStopped = true;
+    }
 }

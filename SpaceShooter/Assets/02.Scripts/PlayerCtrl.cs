@@ -102,6 +102,9 @@ public class PlayerCtrl : MonoBehaviour
         //스테이지에 있는 모든 몬스터를 추출해서 배열에 저장
         GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
 
-        
+        foreach (GameObject monster in monsters)
+        {
+            monster.SendMessage("OnYouWin", SendMessageOptions.DontRequireReceiver);
+        }
     }
 }
