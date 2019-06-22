@@ -152,6 +152,19 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
 
+    public void OnDamage(RaycastHit hit, float damage)
+    {
+        //생명 수치를 차감
+        hp -= damage;
+        if (hp <= 0.0f)
+        {
+            MonsterDie();
+        }
+        
+        ShowBloodEffect(hit.point, Quaternion.LookRotation(-hit.normal));
+        anim.SetTrigger(hashHit);
+    }
+
     void ShowBloodEffect(Vector3 pos, Quaternion rot)
     {
         GameObject effect = Instantiate(bloodEffect, pos, rot);
