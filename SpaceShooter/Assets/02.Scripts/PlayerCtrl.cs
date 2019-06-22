@@ -79,5 +79,13 @@ public class PlayerCtrl : MonoBehaviour
         */
     }
 
-
+    //Collider의 IsTrigger 옵션 체크되면 호출되는 콜백함수
+    //관통하는 성질을 갖는다.
+    void OnTriggerEnter(Collider coll)
+    {
+        if (coll.CompareTag("PUNCH"))
+        {
+            Debug.Log("Hit " + coll.gameObject.name);
+        }
+    }
 }
