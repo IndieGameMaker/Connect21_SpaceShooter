@@ -21,6 +21,9 @@ public class PlayerCtrl : MonoBehaviour
     public PlayerAnim playerAnim;
     public float moveSpeed = 10.0f;
 
+    private float initHp = 100.0f;  //초기 생명수치
+    private float currHp = 100.0f;  //현재 생명수치
+
     void Start()
     {
         tr = GetComponent<Transform>(); 
@@ -85,7 +88,16 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (coll.CompareTag("PUNCH"))
         {
-            Debug.Log("Hit " + coll.gameObject.name);
+            currHp -= 10.0f;
+            if (currHp <= 0.0f)
+            {
+                PlayerDie();
+            }
         }
+    }
+
+    void PlayerDie()
+    {
+        Debug.Log("Player Die");
     }
 }
