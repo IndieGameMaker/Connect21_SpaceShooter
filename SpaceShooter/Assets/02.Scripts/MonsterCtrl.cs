@@ -144,9 +144,18 @@ public class MonsterCtrl : MonoBehaviour
                 MonsterDie();
             }
 
+            ContactPoint[] points = coll.contacts;
+            
+            ShowBloodEffect(points[0].point, Quaternion.LookRotation(-points[0].normal));
             anim.SetTrigger(hashHit);
             Destroy(coll.gameObject);
         }
+    }
+
+    void ShowBloodEffect(Vector3 pos, Quaternion rot)
+    {
+        GameObject effect = Instantiate(bloodEffect, pos, rot);
+        Destroy(effect, 2.0f);
     }
 
     void MonsterDie()
