@@ -41,7 +41,7 @@ public class FireCtrl : MonoBehaviour
     void Fire()
     {
         //총알을 생성
-        //Instantiate(bullet, firePos.position, firePos.rotation);
+        Instantiate(bullet, firePos.position, firePos.rotation);
         //총 소리 발생
         _audio.PlayOneShot(fireSfx, 0.8f); //오디오 파일, 볼륨
         //코루틴 호출 함수

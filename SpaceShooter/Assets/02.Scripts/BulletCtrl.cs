@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BulletCtrl : MonoBehaviour
 {
@@ -11,7 +9,7 @@ public class BulletCtrl : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.AddRelativeForce(Vector3.forward * 800.0f);   
+        rb.AddRelativeForce(Vector3.forward * 1500.0f);   
     }
 
 }
