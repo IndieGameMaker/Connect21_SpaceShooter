@@ -161,7 +161,7 @@ public class MonsterCtrl : MonoBehaviour
             MonsterDie();
         }
         
-        ShowBloodEffect(hit.point, Quaternion.LookRotation(-hit.normal));
+        ShowBloodEffect(hit.point, Quaternion.LookRotation(hit.normal));
         anim.SetTrigger(hashHit);
     }
 
