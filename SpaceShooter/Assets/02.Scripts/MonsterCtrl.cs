@@ -28,6 +28,7 @@ public class MonsterCtrl : MonoBehaviour
     //애니메이터 컨트롤러에 정의된 파라미터의 해쉬값을 미리 추출해 저장
     private int hashIsAttack = Animator.StringToHash("IsAttack");
     private int hashHit      = Animator.StringToHash("Hit");
+    private int hashDie      = Animator.StringToHash("Die");
 
     //몬스터의 생명 게이지 수치
     private float hp = 100.0f;
@@ -130,6 +131,15 @@ public class MonsterCtrl : MonoBehaviour
 
     void MonsterDie()
     {
-        Debug.Log("Monster Die!!!!");
+        //네비게이션 정지
+        nv.isStopped = true;
+        //Capsule Collier 비활성화
+        this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+
+        //현재 스크립트에서 실행중인 모든 코루틴 함수를 정지
+        StopAllCoroutines();
+
+        //몬스터의 Die 애니메이션 실행
+        anim.SetTrigger(hashDie);
     }
 }
