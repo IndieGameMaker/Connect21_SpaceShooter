@@ -135,19 +135,6 @@ public class MonsterCtrl : MonoBehaviour
     {
         if (coll.collider.CompareTag("BULLET"))
         {
-            //총알의 데미지 추출
-            float _damage = coll.gameObject.GetComponent<BulletCtrl>().damage;
-            //생명 수치를 차감
-            hp -= _damage;
-            if (hp <= 0.0f)
-            {
-                MonsterDie();
-            }
-
-            ContactPoint[] points = coll.contacts;
-            
-            ShowBloodEffect(points[0].point, Quaternion.LookRotation(-points[0].normal));
-            anim.SetTrigger(hashHit);
             Destroy(coll.gameObject);
         }
     }
