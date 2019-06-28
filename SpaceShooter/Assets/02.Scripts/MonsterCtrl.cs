@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /// <summary>
-/// 
-/// </summary>
+///  
+/// </summary> 
 public class MonsterCtrl : MonoBehaviour
 {
     public enum State
