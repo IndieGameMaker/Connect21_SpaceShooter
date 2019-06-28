@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-//
+/// <summary>
+/// 
+/// </summary>
 public class MonsterCtrl : MonoBehaviour
 {
     public enum State
