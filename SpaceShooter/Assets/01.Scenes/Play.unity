@@ -96,7 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
-  m_LightingDataAsset: {fileID: 112000000, guid: 5d4520b78931742f3ae0a4732026340d,
+  m_LightingDataAsset: {fileID: 112000002, guid: 69906991d8a684d878e916c505b63307,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 88c499f11f7854feb9974aebd085290b, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: bf1ee2cad369f469eb4f83bae9e6aaee, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
