@@ -27,10 +27,13 @@ public class PlayerCtrl : MonoBehaviour
     public delegate void PlayerDieHandler();
     public static event PlayerDieHandler OnPlayerDie;
 
+    private GameManager gameManager;
+
     void Start()
     {
         tr = GetComponent<Transform>(); 
         anim = GetComponent<Animation>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         anim.Play(playerAnim.idle.name);
     }
@@ -103,6 +106,9 @@ public class PlayerCtrl : MonoBehaviour
     void PlayerDie()
     {
         OnPlayerDie(); //이벤트 호출(Raise)
+        //GameManager 이름인 게임오브젝트를 추출한 후 GameManager.cs 스크립트를 추출
+        //GameObject.Find("GameManager").GetComponent<GameManager>().isGameOver = true;
+        gameManager.isGameOver = true;
 
         //스테이지에 있는 모든 몬스터를 추출해서 배열에 저장
         // GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
