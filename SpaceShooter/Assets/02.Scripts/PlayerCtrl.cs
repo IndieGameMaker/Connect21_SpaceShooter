@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class PlayerAnim
@@ -18,6 +18,7 @@ public class PlayerCtrl : MonoBehaviour
 {
     private Transform tr;
     private Animation anim;
+    public Image hpBar;
 
     public PlayerAnim playerAnim;
     public float moveSpeed = 10.0f;
@@ -35,7 +36,7 @@ public class PlayerCtrl : MonoBehaviour
         tr = GetComponent<Transform>(); 
         anim = GetComponent<Animation>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-
+        hpBar = GameObject.Find("Canvas/Panel - Health Bar/Image").GetComponent<Image>();
         anim.Play(playerAnim.idle.name);
     }
 
