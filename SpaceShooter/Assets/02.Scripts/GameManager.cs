@@ -16,12 +16,13 @@ public class GameManager : MonoBehaviour
         points = GameObject.Find("SpawnPointGroup").GetComponentsInChildren<Transform>();
         //메소드를 반복해서 호출(실행) 시킴
         //InvokeRepeating("CreateMonster", 2.0f, createTime);
+        StartCoroutine(CreateMonster());
     }
 
     IEnumerator CreateMonster()
     {
         yield return new WaitForSeconds(2.0f); //Delay time
-        
+
         while(isGameOver == false)
         {
             //난수 발생
