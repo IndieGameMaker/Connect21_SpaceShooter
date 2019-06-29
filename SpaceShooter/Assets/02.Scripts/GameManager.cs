@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        points = GameObject.Find("SpawnPointGroup").GetComponentsInChildren<Transform>();
     }
 
     // Update is called once per frame
