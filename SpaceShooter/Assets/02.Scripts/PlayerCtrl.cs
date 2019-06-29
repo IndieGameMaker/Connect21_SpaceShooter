@@ -97,7 +97,10 @@ public class PlayerCtrl : MonoBehaviour
         if (currHp > 0.0f && coll.CompareTag("PUNCH"))
         {
             //주인공의 생명 감산
-            currHp -= 10.0f;        
+            currHp -= 10.0f;
+
+            hpBar.fillAmount = currHp / initHp; //백분율 계산
+
             if (currHp <= 0.0f)
             {
                 PlayerDie();

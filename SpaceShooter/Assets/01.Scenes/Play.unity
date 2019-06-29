@@ -370,6 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7e5046ffcce45f6946df5c490e45c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpBar: {fileID: 0}
   playerAnim:
     idle: {fileID: 7400000, guid: df787a42d52d64ff4b908f7a344d499e, type: 2}
     runForward: {fileID: 7400000, guid: 185c4b4f1e1c1441d920959e7dee49a5, type: 2}
@@ -1120,7 +1121,7 @@ GameObject:
   - component: {fileID: 1581696526}
   - component: {fileID: 1581696525}
   m_Layer: 5
-  m_Name: Panel - Healh Bar
+  m_Name: Panel - Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1143,7 +1144,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 120.03, y: -35.62}
+  m_AnchoredPosition: {x: 120.03, y: -35.619995}
   m_SizeDelta: {x: 217.87, y: 54.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1581696525
@@ -1280,7 +1281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.2925898}
   m_AnchorMax: {x: 1, y: 0.70741016}
-  m_AnchoredPosition: {x: -0.5, y: -1.5895}
+  m_AnchoredPosition: {x: -0.5, y: -1.5894995}
   m_SizeDelta: {x: -30.38, y: -3.9169}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1961056899
