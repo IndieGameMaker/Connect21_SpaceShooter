@@ -13,11 +13,15 @@ public class FireCtrl : MonoBehaviour
     private AudioSource _audio;
     //Ray에 닿은 객체의 여러가지 충돌 정보를 저장할 변수
     private RaycastHit hit;
+    private Light fireLight;
 
     void Start()
     {
         _audio = GetComponent<AudioSource>();
         muzzleFlash.enabled = false;
+
+        fireLight = firePos.Find("Point Light").GetComponent<Light>();
+        fireLight.intensity = 0.0f;        
     }
 
     // Update is called once per frame
@@ -50,6 +54,9 @@ public class FireCtrl : MonoBehaviour
 
     IEnumerator ShowMuzzleFlash()
     {
+        //조명을 활성화
+        fireLight.intensity = Random.Range(1.0f, 5.0f);
+
         //Offset 값 변경
         Vector2 offset = new Vector2(Random.Range(0,2) , Random.Range(0,2)) * 0.5f;
         muzzleFlash.material.SetTextureOffset("_MainTex", offset);
@@ -64,6 +71,8 @@ public class FireCtrl : MonoBehaviour
         muzzleFlash.enabled = true;
         yield return new WaitForSeconds(0.2f);
         muzzleFlash.enabled = false;
+        //조명 비활성
+        fireLight.intensity = 0.0f;
     }
 
 }

@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3678193779651265432}
   - component: {fileID: 3678193779665097436}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_oog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3678193779651265466}
   - component: {fileID: 3678193779665097426}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ondertanden
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3678193779651265482}
   - component: {fileID: 3678193779665097424}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: muktar_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3678193779651265502}
   - component: {fileID: 3678193779665097430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_OOG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3678193779651265520}
   - component: {fileID: 3678193779665097428}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boventanden
   m_TagString: Untagged
   m_Icon: {fileID: 0}
