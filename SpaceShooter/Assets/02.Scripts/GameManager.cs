@@ -11,6 +11,22 @@ public class GameManager : MonoBehaviour
     //게임 종료 여부
     public bool isGameOver = false;
 
+    //싱글턴(Sington Design Pattern)
+    public static GameManager instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     void Start()
     {
         points = GameObject.Find("SpawnPointGroup").GetComponentsInChildren<Transform>();

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class PlayerAnim
@@ -107,8 +108,13 @@ public class PlayerCtrl : MonoBehaviour
     {
         OnPlayerDie(); //이벤트 호출(Raise)
         //GameManager 이름인 게임오브젝트를 추출한 후 GameManager.cs 스크립트를 추출
+        //1번째 방식
         //GameObject.Find("GameManager").GetComponent<GameManager>().isGameOver = true;
-        gameManager.isGameOver = true;
+        //2번째 방식
+        //gameManager.isGameOver = true;
+
+        //3번째 방식 : 싱글턴
+        GameManager.instance.isGameOver = true;
 
         //스테이지에 있는 모든 몬스터를 추출해서 배열에 저장
         // GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");

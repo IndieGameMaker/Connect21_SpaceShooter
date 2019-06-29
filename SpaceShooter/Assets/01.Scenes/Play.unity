@@ -3569,6 +3569,7 @@ MonoBehaviour:
   monsterPrefab: {fileID: 3678193779651501972, guid: f02a0c7f305464eb4b20948affa822f2,
     type: 3}
   createTime: 3
+  isGameOver: 0
 --- !u!4 &2123299546
 Transform:
   m_ObjectHideFlags: 0
